@@ -22,12 +22,23 @@ const items = ["Pencil", "Notebook", "yo-yo", "Gum"];
 */
 
 function getLength(arr, cb) {
-  // getLength passes the length of the array into the callback.
+ // getLength passes the length of the array into the callback.
   cb(arr.length);
 }
 getLength(items, function(length) {
   console.log(length);
 });
+
+//breakdown
+// function getLength(arr, cb) {
+//   cb(arr.length);
+// }
+// function a(length) {
+//    console.log(length);
+// }
+// getLength(items, a);
+//breakdown
+
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
@@ -57,6 +68,11 @@ function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
 }
+
+
+
+
+
 
 /* STRETCH PROBLEM */
 

@@ -59,7 +59,7 @@ let fullName = [];
 fullname = runners.forEach(function(runner) 
 {
     return fullName.push (`${runner.first_name} ${runner.last_name}`)
-});
+})
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
@@ -85,17 +85,42 @@ console.log(largeShirts);
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 
 let ticketPriceTotal = [];
-ticketPriceTotal = runners.reduce(function(accumlator, currentValue) 
+ticketPriceTotal = runners.reduce(function(accumulator, currentValue) 
 {
-    return accumlator + currentValue.donation;
+    return accumulator + currentValue.donation;
 },0);   // 0 is the initial value.
 console.log(ticketPriceTotal);
+
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// who doanted more than $250.00 in donation.
+let amount = [];
+amount = runners.filter(function(runner){  
+    if (runner.donation > 250)
+    {
+        return true;  
+    }
+})
+console.log(amount);
 
 // Problem 2
+//name of the companies participating
+let cName = [];
+cName = runners.map(function(runner){
+        return (runner.company_name);
+    })
+console.log(cName); 
+
+
 
 // Problem 3
+//a company agreed to match the donation, total after matching.
+let matchDonation = [];
+matchDonation = runners.reduce(function(accumulator, currentValue) 
+{
+    return accumulator + currentValue.donation;
+},0);   // 0 is the initial value.
+console.log(matchDonation * 2);
